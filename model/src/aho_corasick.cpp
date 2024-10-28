@@ -68,6 +68,27 @@ void AhoCorasick::search(const std::string &text)
         // Reach to suitable Node with using fail links
         while (current != root && current->children.find(ch) == current->children.end())
         {
+            current = current->fail;
+        }
+
+        if (current->children.find(ch) != current->children.end())
+        {
+            current = current->children[ch];
+        }
+        else
+        {
+            current = root;
+        }
+
+        // Capture "End Of A Word"
+        TrieNode *temp = current;
+        while (temp != root)
+        {
+            if (temp->isEnd)
+            {
+                std::cout << "Found pattern match at index -> " << i << std::endl;
+            }
+            temp = temp->fail;
         }
     }
 }
