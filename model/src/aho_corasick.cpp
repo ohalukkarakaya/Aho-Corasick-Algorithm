@@ -29,7 +29,15 @@ void AhoCorasick::build_failure_links()
 
             if (fail_node->children.find(ch) != fail_node->children.end())
             {
+                child->fail = fail_node->children[ch];
             }
+            else
+            {
+                child->fail = root;
+            }
+
+            // Add other Nodes to queue to allso do same for them
+            q.push(child);
         }
     }
 }
