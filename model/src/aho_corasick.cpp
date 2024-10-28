@@ -86,7 +86,8 @@ void AhoCorasick::search(const std::string &text)
         {
             if (temp->isEnd)
             {
-                std::cout << "Found pattern match at index -> " << i << std::endl;
+                std::cout << "Found pattern match ending at index -> " << i << " letter: " << text[i] << std::endl;
+                break;
             }
             temp = temp->fail;
         }
