@@ -10,6 +10,7 @@ struct TrieNode
     std::unordered_map<char, TrieNode *> children;
     TrieNode *fail;
     bool isEnd;
+    std::string matched_word; // For test reasons
 
     TrieNode() : fail(nullptr), isEnd(false)
     {

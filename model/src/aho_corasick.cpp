@@ -13,6 +13,7 @@ void AhoCorasick::add_word(const std::string &word)
         current = current->children[ch];
     }
     current->isEnd = true;
+    current->matched_word = word;
 }
 
 void AhoCorasick::build_failure_links()
@@ -65,7 +66,7 @@ void AhoCorasick::search(const std::string &text)
     {
         char ch = text[i];
 
-        // Reach to suitable Node with using fail links
+        // Reaching the appropriate node using the perpetrator connections
         while (current != root && current->children.find(ch) == current->children.end())
         {
             current = current->fail;
@@ -80,13 +81,19 @@ void AhoCorasick::search(const std::string &text)
             current = root;
         }
 
-        // Capture "End Of A Word"
+        // Check if we have reached the end of the word in case of a match
         TrieNode *temp = current;
         while (temp != root)
         {
             if (temp->isEnd)
             {
-                std::cout << "Found pattern match ending at index -> " << i << " letter: " << text[i] << std::endl;
+                // i: character position, calculate the starting position of the word
+                int start_index = i - temp->matched_word.size() + 1;
+                if (start_index >= 0) // Check for a valid starting index
+                {
+                    std::cout << "Found pattern match from index " << start_index << " to index " << i
+                              << " matched word: " << temp->matched_word << std::endl;
+                }
                 break;
             }
             temp = temp->fail;

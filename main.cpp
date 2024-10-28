@@ -4,9 +4,19 @@
 
 int main(int argc, char *argv[])
 {
-    // Words to search
-    std::vector<std::string> patterns = {"he", "she", "his"};
-    std::string text = "ushers hope his she";
+    if (argc < 4)
+    {
+        std::cerr << "Usage: " << argv[0] << " [pattern1 pattern2 pattern3 ...] \"text to search in\"" << std::endl;
+        return 1;
+    }
+
+    std::vector<std::string> patterns;
+    for (int i = 1; i < argc - 1; ++i)
+    {
+        patterns.push_back(argv[i]);
+    }
+
+    std::string text = argv[argc - 1];
 
     // Create Aho-Corasick Class instance and add Words
     AhoCorasick ac;
