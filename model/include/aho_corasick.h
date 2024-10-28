@@ -9,7 +9,6 @@ class AhoCorasick
 {
   private:
     TrieNode *root;
-    void build_failure_links();
 
   public:
     AhoCorasick()
@@ -18,6 +17,7 @@ class AhoCorasick
     }
 
     void add_word(const std::string &word);
+    void build_failure_links();
     void search(const std::string &text);
 };
 

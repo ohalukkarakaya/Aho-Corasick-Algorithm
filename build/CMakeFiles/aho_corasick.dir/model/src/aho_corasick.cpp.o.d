@@ -1,5 +1,6 @@
-CMakeFiles/aho_corasick.dir/main.cpp.o: \
-  /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/data_strctrs_algrthm/Aho-Corasick-Algorithm/main.cpp \
+CMakeFiles/aho_corasick.dir/model/src/aho_corasick.cpp.o: \
+  /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/data_strctrs_algrthm/Aho-Corasick-Algorithm/model/src/aho_corasick.cpp \
+  /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/data_strctrs_algrthm/Aho-Corasick-Algorithm/model/src/../include/aho_corasick.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/iostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__assert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__assertion_handler \
@@ -956,5 +957,4 @@ CMakeFiles/aho_corasick.dir/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__format/formatter_tuple.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/print \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/unistd.h \
-  /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/data_strctrs_algrthm/Aho-Corasick-Algorithm/model/include/aho_corasick.h \
-  /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/data_strctrs_algrthm/Aho-Corasick-Algorithm/model/include/trie_node.h
+  /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/data_strctrs_algrthm/Aho-Corasick-Algorithm/model/src/../include/trie_node.h

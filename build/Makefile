@@ -153,6 +153,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aho_corasick.dir/build.make CMakeFiles/aho_corasick.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+model/src/aho_corasick.o: model/src/aho_corasick.cpp.o
+.PHONY : model/src/aho_corasick.o
+
+# target to build an object file
+model/src/aho_corasick.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aho_corasick.dir/build.make CMakeFiles/aho_corasick.dir/model/src/aho_corasick.cpp.o
+.PHONY : model/src/aho_corasick.cpp.o
+
+model/src/aho_corasick.i: model/src/aho_corasick.cpp.i
+.PHONY : model/src/aho_corasick.i
+
+# target to preprocess a source file
+model/src/aho_corasick.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aho_corasick.dir/build.make CMakeFiles/aho_corasick.dir/model/src/aho_corasick.cpp.i
+.PHONY : model/src/aho_corasick.cpp.i
+
+model/src/aho_corasick.s: model/src/aho_corasick.cpp.s
+.PHONY : model/src/aho_corasick.s
+
+# target to generate assembly for a file
+model/src/aho_corasick.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aho_corasick.dir/build.make CMakeFiles/aho_corasick.dir/model/src/aho_corasick.cpp.s
+.PHONY : model/src/aho_corasick.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +189,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... model/src/aho_corasick.o"
+	@echo "... model/src/aho_corasick.i"
+	@echo "... model/src/aho_corasick.s"
 .PHONY : help
 
 

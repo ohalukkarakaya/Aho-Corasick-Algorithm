@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/aho_corasick.dir/main.cpp.o"
   "CMakeFiles/aho_corasick.dir/main.cpp.o.d"
+  "CMakeFiles/aho_corasick.dir/model/src/aho_corasick.cpp.o"
+  "CMakeFiles/aho_corasick.dir/model/src/aho_corasick.cpp.o.d"
   "aho_corasick"
   "aho_corasick.pdb"
 )
