@@ -59,4 +59,15 @@ void AhoCorasick::add_word(const std::string &word)
 
 void AhoCorasick::search(const std::string &text)
 {
+    TrieNode *current = root;
+
+    for (int i = 0; i < text.size(); ++i)
+    {
+        char ch = text[i];
+
+        // Reach to suitable Node with using fail links
+        while (current != root && current->children.find(ch) == current->children.end())
+        {
+        }
+    }
 }
