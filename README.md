@@ -393,7 +393,7 @@ The **Aho-Corasick algorithm** has a time complexity of **O(n + m + z)**, where:
    - Building a Trie requires processing each character of every pattern only once.
    - This phase takes **O(m)** time, where \( m \) is the sum of the lengths of all patterns.
 
-2. **Failure Link .generation Phase**:
+2. **Failure Link Generation Phase**:
    - The failure links (or failure function) are built using a breadth-first traversal of the Trie, which processes each node once.
    - Setting failure links for all nodes requires **O(m)** time as well.
 
