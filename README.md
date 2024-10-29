@@ -384,16 +384,16 @@ The **Aho-Corasick algorithm** has a time complexity of **O(n + m + z)**, where:
 
 - \( n \): The length of the input text.
 - \( m \): The total number of characters across all patterns (sum of the lengths of all patterns).
-- \( z \): The number of matches found in the text.
+- \( z \): The number of matches found in the text (optional, if you want to report when a match catched, in worst case we include this).
 
 ### Breakdown of Complexity
 
-1. **Trie Construction Phase**:  
+1. **Trie Generation Phase**:  
    - In the first phase, we build a Trie from the patterns.
    - Building a Trie requires processing each character of every pattern only once.
    - This phase takes **O(m)** time, where \( m \) is the sum of the lengths of all patterns.
 
-2. **Failure Link Construction Phase**:
+2. **Failure Link .generation Phase**:
    - The failure links (or failure function) are built using a breadth-first traversal of the Trie, which processes each node once.
    - Setting failure links for all nodes requires **O(m)** time as well.
 
@@ -402,7 +402,7 @@ The **Aho-Corasick algorithm** has a time complexity of **O(n + m + z)**, where:
    - For each character in the input text, we either move forward in the Trie or follow a failure link.
    - Each character in the text is processed only once, so this phase requires **O(n)** time, where \( n \) is the length of the input text.
 
-4. **Match Reporting**:
+4. **Match Reporting** (optional, if you want to report when a match catched, in worst case we include this):
    - Reporting each match takes constant time per match.
    - Since there can be up to **z** matches in the worst case, this part requires **O(z)** time.
 
@@ -416,7 +416,7 @@ $\Large O(n + m + z)$
 
 - **O(m)** for building the Trie and failure links.
 - **O(n)** for processing each character in the text.
-- **O(z)** for reporting each match found.
+- **O(z)** for reporting each match found (optional, if you want to report when a match catched, in worst case we include this).
 
 This efficient complexity allows the Aho-Corasick algorithm to perform multi-pattern matching very quickly, even on large texts and multiple patterns, by using the Trie structure and failure links to avoid redundant comparisons.
 
