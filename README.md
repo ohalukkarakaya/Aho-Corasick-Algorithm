@@ -8,7 +8,7 @@
 ## 🗺️ map 
 - [<code>🧐 What Is It For</code>](#-what-is-it-for)
 - [<code>📝 How It Works</code>](#-how-it-works)
-- [<code>🧵 Failure Links (Suffix Links) Explained</code>](#-failure-links-explained)
+- [<code>🧵 Failure Links (Suffix Links) Explained</code>](#-failure-links-suffix-links-explained)
 - [<code>💻 Code Implementation</code>](#-code-implementation)
 - [<code>⌛ Time Complexity</code>](#-time-complexity)
 - [<code>👍 Conclusion</code>](#-conclusion)
