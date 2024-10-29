@@ -1,2 +1,2 @@
-# Aho-Corasick-Algorithm
+# Aho-Corasick Algorithm
 C++ Aho-Corasick Implementation
