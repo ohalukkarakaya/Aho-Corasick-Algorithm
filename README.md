@@ -18,7 +18,7 @@ Aho–Corasick algorithm is a string-searching algorithm invented by Alfred V. A
 
 Let's say we want to search for the words ["hello", "world", "day"] in the sentence "Today is a perfect day, I said hello to everyone in the world".
 
-If we try this with other regular search algorithms, we will have to run the same algorithm for each word. Aho–Corasick algorithm can find multiple words in a long text in a single scan.
+If we try this with other regular search algorithms, we will need to run the same algorithm for each word. Aho–Corasick algorithm can find multiple words in a long text in a single traversal.
 
 ## 📝 How It Works
 The Aho–Corasick algorithm has three stages:
@@ -319,7 +319,98 @@ struct TrieNode
                 }
             }
            ```
-           
-          
+
+3. Usage in ```main``` function:
+       in our example program, we take pattern list and text to search in as arguement and then we create the logic. So our main function looks like this:
+
+       ```
+        #include <iostream>
+
+        #include "model/include/aho_corasick.h"
+        
+        int main(int argc, char *argv[])
+        {
+            if (argc < 4)
+            {
+                std::cerr << "Usage: " << argv[0] << " [pattern1 pattern2 pattern3 ...] \"text to search in\"" << std::endl;
+                return 1;
+            }
+        
+            std::vector<std::string> patterns;
+            for (int i = 1; i < argc - 1; ++i)
+            {
+                patterns.push_back(argv[i]);
+            }
+        
+            std::string text = argv[argc - 1];
+        
+            // Create Aho-Corasick Class instance and add Words
+            AhoCorasick ac;
+            for (const std::string &word : patterns)
+            {
+                ac.add_word(word);
+            }
+        
+            // Create Failure Links
+            ac.build_failure_links();
+        
+            // Search words in text
+            ac.search(text);
+        
+            std::cout << std::endl;
+            std::cout << "Yaşasın Cumhuriyet!" << std::endl;
+        
+            return 0;
+        }
+       ```
+
+## ⌛ Time Complexity
+
+The **Aho-Corasick algorithm** has a time complexity of **O(n + m + z)**, where:
+
+- \( n \): The length of the input text.
+- \( m \): The total number of characters across all patterns (sum of the lengths of all patterns).
+- \( z \): The number of matches found in the text.
+
+### Breakdown of Complexity
+
+1. **Trie Construction Phase**:  
+   - In the first phase, we build a Trie from the patterns.
+   - Building a Trie requires processing each character of every pattern only once.
+   - This phase takes **O(m)** time, where \( m \) is the sum of the lengths of all patterns.
+
+2. **Failure Link Construction Phase**:
+   - The failure links (or failure function) are built using a breadth-first traversal of the Trie, which processes each node once.
+   - Setting failure links for all nodes requires **O(m)** time as well.
+
+3. **Search Phase**:
+   - During the search phase, we traverse the text while following links in the Trie.
+   - For each character in the input text, we either move forward in the Trie or follow a failure link.
+   - Each character in the text is processed only once, so this phase requires **O(n)** time, where \( n \) is the length of the input text.
+
+4. **Match Reporting**:
+   - Reporting each match takes constant time per match.
+   - Since there can be up to **z** matches in the worst case, this part requires **O(z)** time.
+
+### Final Time Complexity
+
+Combining all phases, the total time complexity of the Aho-Corasick algorithm is:
+
+
+$\Large O(n + m + z)$
+
+
+- **O(m)** for building the Trie and failure links.
+- **O(n)** for processing each character in the text.
+- **O(z)** for reporting each match found.
+
+This efficient complexity allows the Aho-Corasick algorithm to perform multi-pattern matching very quickly, even on large texts and multiple patterns, by using the Trie structure and failure links to avoid redundant comparisons.
+
+## 👍 Conclusion
+
+The Aho-Corasick algorithm stands out among string-searching algorithms due to its ability to search for multiple patterns simultaneously within linear time. Unlike Knuth-Morris-Pratt (KMP), which is optimized for single-pattern searches, Aho-Corasick constructs a Trie to organize multiple patterns and uses failure links to efficiently transition between patterns. Compared to Boyer-Moore, which skips sections of the text based on mismatched characters, Aho-Corasick performs a continuous scan without skipping, ensuring no matches are overlooked. This makes it ideal for applications requiring the identification of multiple keywords in large datasets, offering both efficiency and versatility in pattern matching. [\[2\]](#reference-2)
+
 ## 👉 References
+
 1. <a id="reference-1"></a>[Wikipedia](https://en.wikipedia.org/wiki/Aho%E2%80%93Corasick_algorithm) - Aho–Corasick algorithm (visited at: 29.10.2024)
+2. <a id="reference-2"></a>[YouTube - ComputerBread](https://youtu.be/XWujo7KQL54?si=0yLfk2ODc-GmJfoB) - Ctrl+F on steroids - Aho-Corasick Algorithm (pt. 1) (visited at: 29.10.2024)
