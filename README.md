@@ -30,7 +30,7 @@ The Aho–Corasick algorithm has three stages:
 
 **Let's say we want to search for the words ["hello", "world", "day"] in the sentence "Today is a perfect day, I said hello to everyone in the world" :**
 
-<h3>Trie structure creation</h3>
+<h3>🌳 Trie Structure Creation</h3>
 In the Aho–Corasick algorithm, the first phase is creating a Trie (prefix tree) structure from the list of words we want to search for.
 <br> <br>
 
@@ -89,7 +89,7 @@ If we added the word **"word"** using the same method, the tree would look like 
 [end of "hello"]
 ```
 
-<h3>Failure links generation</h3>
+<h3>🧵 Failure Links Generation</h3>
 
 If no match is found at a node during the search in the **Trie** structure, **failure links** are created to point to an alternative node where the algorithm will continue. These links expedite the search process, ensuring the algorithm progresses efficiently.
 
@@ -146,6 +146,10 @@ We follow these steps:
 5. **Final Level of ```o```, ```d```, and ```d```:**
     1. ```o``` (from ```h -> e -> l -> l```): Fails to root since no further matching prefix exists
     2. ```d``` (from ```w -> o -> r -> l -> d```): Fails to the ```d``` at ```w -> o -> r```
+
+<h3>🔍 Search Step</h3>
+
+The algorithm searches the tree in order for each character of the long text to be searched, if it reaches a finishing node, it means that it has found a pattern.
 
 ## 👉 References
 1. <a id="reference-1"></a>[Wikipedia](https://en.wikipedia.org/wiki/Aho%E2%80%93Corasick_algorithm) - Aho–Corasick algorithm (visited at: 29.10.2024)
