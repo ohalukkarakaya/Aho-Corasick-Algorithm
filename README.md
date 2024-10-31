@@ -162,7 +162,7 @@ The algorithm searches the tree in order for each character of the long text to 
 
 Failure links (or Suffix Links) are at the core of the Aho-Corasick algorithm's success, allowing the algorithm to continue from the most appropriate place instead of "starting over" when a match is not found at a node. These links use previous partial matches at each node to find the longest valid prefix, thus avoiding repetitive computations.
 
-Let's say the words we are looking for are ```"hello"```, ```"help"```, and ```"helium"``` and now we have found matches up to ```"hel"``` in the Trie. If the letter after ```"l"``` does not match the expected match, the algorithm follows the failure link to find another word that forms the prefix ```"hel"```. These links allow us to quickly check for partial matches (longest prefix). This way, the failure link allows the algorithm to continue from the correct position using partial prefix matches without starting from scratch, for paths that contain the same letters but lead to different words. The ```"hel"``` part is common to ```"hello"``` and ```"helium"```, so the failure link considers both words.
+Let's say the words we are looking for are ```"hello"```, ```"help"```, and ```"helium"``` and now we have found matches up to ```"hel"``` in the Trie. If the letter after ```"l"``` does not match the expected match, the algorithm follows the failure link to find another word that forms the prefix ```"hel"```. These links allow us to quickly check for partial matches (longest prefix). This way, the failure link allows the algorithm to continue from the correct position using partial prefix matches without starting from scratch, for paths that contain the same letters but lead to different words. The ```"hel"``` part is common to ```"hello"``` and ```"helium"```, so the failure link considers both words. [\[2\]](#reference-2)
 
 <hr style="border: 0.1px solid #ccc;" />
 
@@ -424,11 +424,12 @@ This efficient complexity allows the Aho-Corasick algorithm to perform multi-pat
 
 ## 👍 Conclusion
 
-The Aho-Corasick algorithm stands out among string-searching algorithms due to its ability to search for multiple patterns simultaneously within linear time. Unlike Knuth-Morris-Pratt (KMP), which is optimized for single-pattern searches, Aho-Corasick constructs a Trie to organize multiple patterns and uses failure links to efficiently transition between patterns. Compared to Boyer-Moore, which skips sections of the text based on mismatched characters, Aho-Corasick performs a continuous scan without skipping, ensuring no matches are overlooked. This makes it ideal for applications requiring the identification of multiple keywords in large datasets, offering both efficiency and versatility in pattern matching. [\[2\]](#reference-2)
+The Aho-Corasick algorithm stands out among string-searching algorithms due to its ability to search for multiple patterns simultaneously within linear time. Unlike Knuth-Morris-Pratt (KMP), which is optimized for single-pattern searches, Aho-Corasick constructs a Trie to organize multiple patterns and uses failure links to efficiently transition between patterns. Compared to Boyer-Moore, which skips sections of the text based on mismatched characters, Aho-Corasick performs a continuous scan without skipping, ensuring no matches are overlooked. This makes it ideal for applications requiring the identification of multiple keywords in large datasets, offering both efficiency and versatility in pattern matching. [\[3\]](#reference-3)
 
 <hr style="border: 0.1px solid #ccc;" />
 
 ## 👉 References
 
 1. <a id="reference-1"></a>[Wikipedia](https://en.wikipedia.org/wiki/Aho%E2%80%93Corasick_algorithm) - Aho–Corasick algorithm (visited at: 29.10.2024)
-2. <a id="reference-2"></a>[YouTube - ComputerBread](https://youtu.be/XWujo7KQL54?si=0yLfk2ODc-GmJfoB) - Ctrl+F on steroids - Aho-Corasick Algorithm (pt. 1) (visited at: 29.10.2024)
+2. <a id ="reference-2"></a>[YouTube - Niema Moshiri](https://www.youtube.com/watch?v=OFKxWFew_L0) - Advanced Data Structures: Aho-Corasick Dictionary Links (visited at: 30.10.2024)
+3. <a id="reference-3"></a>[YouTube - ComputerBread](https://youtu.be/XWujo7KQL54?si=0yLfk2ODc-GmJfoB) - Ctrl+F on steroids - Aho-Corasick Algorithm (pt. 1) (visited at: 29.10.2024)
