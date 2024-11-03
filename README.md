@@ -123,15 +123,15 @@ We follow these steps:
    - For each node, try to set its failure link by looking for the longest suffix that matches a prefix in the Trie.
 
 3. **Setting Failure Links for Each Node:**
-   - For each node ```N``` with character ```C``, we:
+   - For each node ```N``` with character ```C```, we:
       - Follow the failure link of ```N```’s parent to find a node ```P```.
       - Check if ```P``` has a child with character ```C```. If it does, set ```N```’s failure link to that child.
-      - If no match is found in ```P```, continue following ```P``’s failure link until either a match is found or we reach the root.
+      - If no match is found in ```P```, continue following ```P```’s failure link until either a match is found or we reach the root.
       - If we reach the root and don’t find a match, set ```N```'s failure link to the root.
 
 **For our Trie:**
 1. **Root Level:**
-    - Nodes ```h```, ```w```, and ```d`` are directly connected to the root. Thus, their failure links point to the root.
+    - Nodes ```h```, ```w```, and ```d``` are directly connected to the root. Thus, their failure links point to the root.
 
 2. **Level of ```h -> e```, ```w -> o```, and ```d -> a```:**
     - ```e``` (child of ```h```): Fails to root since there is no path from root that starts with ```e```
